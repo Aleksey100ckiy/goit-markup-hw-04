@@ -14,6 +14,7 @@
     --active-button-color:#188CE8;
     --footer-bigtext-color:#ffffff;
     --footer-navtext-color: rgba(255,255,255,0.6);
+    --icons-color:#AFB1B8;
 }
 body{
     font-family: 'Roboto','Montserrat',
@@ -33,12 +34,14 @@ img{
 h1, h2, h3, a, p{
 margin-top: 0;
 margin-bottom: 0;
+text-decoration:none;
 }
 ul, li{
 margin-top: 0;
 margin-bottom: 0;
 padding-left: 0;
 margin-left: 0;
+list-style: none;
 }
 /* ----------------------------------header--------------- */
 
@@ -89,6 +92,25 @@ color:var(--logo-button-color);
     border-bottom-width: 1px;
     border-bottom-color: rgba(236, 236, 236, 1);
     border-bottom-style: solid;
+}
+.header-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.nav-icon{
+    text-decoration: none;
+    height: 16px;
+    width: 16px;
+    fill: var(--icons-color);
+    margin-right: 10px;
+
+}
+.link:hover .nav-icon,
+.link:focus .nav-icon{
+    fill: var(--logo-button-color);
+    cursor: pointer;
 }
 /* --------------------site-main------------- */
 .container{
@@ -162,8 +184,37 @@ color:var(--logo-button-color);
 .member-card:last-child{
 margin-right: 0;
 }
-.element{
-    
+.social-list{
+    display:flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+.social-list-icon{
+    text-decoration: none;
+    width: 20px;
+    height: 20px;
+    fill: var(--icons-color);
+}
+.social-list-link{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color:var(--header-bcg-color);
+}
+.social-list-link:hover,
+.social-list-link:focus{
+   background-color: var(--logo-button-color);
+}
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon{
+    fill:var(--header-bcg-color)
+}
+.member-card{
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .engaged {
     display: flex;
@@ -192,6 +243,7 @@ margin-right: 0;
         text-align: center;
         letter-spacing: 0.03em;
         color: var(--text-colour);
+        margin-bottom: 16px;
 }
 .header-links~.link{
 font-family: 'Roboto';
@@ -217,8 +269,20 @@ background-color:var(--footer-bcg-color);
 text-align: center; 
 padding-top: 200px;
 padding-bottom: 200px;
+background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-img.jpg");
+background-size: contain;
+background-position: center;
 }
 
+.benefit-box{
+    display: flex;
+    height: 120px;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--portfolio-bottom-color);
+    margin-bottom: 30px;
+}
 .visually-hidden{
     position: absolute;
         white-space: nowrap;
@@ -239,6 +303,39 @@ padding-bottom: 200px;
 .third-section{
     background-color: var(--portfolio-bottom-color);
 }
+
+.client-list-element{
+width: calc( (100% - 120px) / 6);
+}
+.client-list-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92px;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+}
+.client-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
+    padding-left: auto;
+    padding-right: auto;
+}
+.client-list-icon{
+   fill: var(--icons-color);
+   height: 60px;
+   width: 106px;
+}
+.client-list-box:hover .client-list-icon,
+.client-list-box:focus .client-list-icon{
+    fill:var(--logo-button-color);
+    border: 1px, solid var(--logo-button-color);
+    cursor: pointer;
+}
+
 /* -------------------button-settings----------- */
 .button {
     font-family: 'Roboto';
@@ -277,6 +374,7 @@ padding-bottom: 200px;
     cursor: pointer;
     background-color: var(--logo-button-color);
     color: var(--header-bcg-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 /* -------------------------------Titles---------------- */
@@ -321,17 +419,26 @@ padding-bottom: 200px;
     display: inline-block;
     padding-right: 0;
 }
-.page-footer{
+.page-footer-main{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:flex-start;
-    background-color:var(--footer-bcg-color);
-    color:var(--footer-bigtext-color);
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items:baseline;
     padding-top: 60px;
     padding-bottom: 60px;
+    column-gap: 70px;
 }
-
+.link-footer{
+    display: ;
+}
+.footer-header{
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.14;
+    margin-bottom: 20px;
+}
 .footer-logo-link{
     font-family: 'Raleway';
     font-weight: 700;
@@ -340,8 +447,17 @@ padding-bottom: 200px;
     color:var(--footer-bigtext-color);
     margin-bottom: 20px;
 }
+.page-footer{
+    background-color: var(--footer-bcg-color);
+    color: var(--footer-bigtext-color);
+}
 .firm-address{
+    display: flex;
     font-style: normal;
+    padding-right: 0;
+}
+.footer-links-list{
+    display: inline-block;
 }
 .footer-links-list>li:not(:last-child){
 margin-bottom: 9px;
@@ -352,7 +468,42 @@ margin-bottom: 9px;
 .footer-nav-link{
     color: var(--footer-navtext-color);
 }
+.footer-social-list {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
 
+.footer-social-list-icon {
+    text-decoration: none;
+    width: 20px;
+    height: 20px;
+    fill: var(--footer-bigtext-color);
+}
+.footer-social-element{
+    display: flex;
+    flex-direction: column;
+    align-items:baseline;
+}
+.footer-social-list-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-social-list-link:hover,
+.footer-social-list-link:focus {
+    background-color: var(--logo-button-color);
+}
+
+.footer-social-list-link:hover .footer-social-list-icon,
+.footer-social-list-link:focus .footer-social-list-icon {
+    fill: var(--header-bcg-color)
+}
 /* -----------------portfolio page--------------- */
 
 .portfolio-hero{
@@ -410,6 +561,13 @@ margin-bottom: 9px;
     border-left-style: solid;
     border-left-color:rgba(238, 238, 238, 1);
     
+}
+.product-link{
+    display: inline-block;
+}
+.product-link:hover,
+.product-link:focus{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .flex-element{
     width: calc( (100% - 60px) / 3);
