@@ -65,16 +65,23 @@ align-items:center;
 .site-nav{
 display: flex;
 }
-/* .site-nav .item{
+.site-nav .item{
     padding-top: 34px;
     padding-bottom: 34px;
-} */
+} 
 /*.site-nav .item:last-child{
     margin-right: 0;
 }*/
 .site-nav .item + .item{
     margin-left: 50px;
 }
+.navig{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .logo-site{
     margin-right: 94px;
 }
@@ -101,11 +108,10 @@ color:var(--logo-button-color);
 }
 .nav-icon{
     text-decoration: none;
-    height: 16px;
-    width: 16px;
+    /* height: 16px;
+    width: 16px; */
     fill: var(--icons-color);
     margin-right: 10px;
-
 }
 .link:hover .nav-icon,
 .link:focus .nav-icon{
@@ -191,8 +197,8 @@ margin-right: 0;
 }
 .social-list-icon{
     text-decoration: none;
-    width: 20px;
-    height: 20px;
+    /* width: 20px;
+    height: 20px; */
     fill: var(--icons-color);
 }
 .social-list-link{
@@ -272,6 +278,9 @@ padding-bottom: 200px;
 background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-img.jpg");
 background-size: contain;
 background-position: center;
+background-size: cover;
+width: 1600px;
+background-repeat: no-repeat;
 }
 
 .benefit-box{
@@ -305,7 +314,7 @@ background-position: center;
 }
 
 .client-list-element{
-width: calc( (100% - 120px) / 6);
+width: calc( (100% - 150px) / 6);
 }
 .client-list-box {
     display: flex;
@@ -326,13 +335,18 @@ width: calc( (100% - 120px) / 6);
 }
 .client-list-icon{
    fill: var(--icons-color);
-   height: 60px;
-   width: 106px;
+   /* height: 60px;
+   width: 106px; */
+}
+.client-list-box:hover, 
+.client-list-box:focus {
+    fill:var(--logo-button-color);
+    border: 1px solid var(--logo-button-color);
+    cursor: pointer;
 }
 .client-list-box:hover .client-list-icon,
 .client-list-box:focus .client-list-icon{
-    fill:var(--logo-button-color);
-    border: 1px, solid var(--logo-button-color);
+    fill: var(--logo-button-color);
     cursor: pointer;
 }
 
@@ -429,7 +443,6 @@ width: calc( (100% - 120px) / 6);
     column-gap: 70px;
 }
 .link-footer{
-    display: ;
 }
 .footer-header{
     text-transform: uppercase;
@@ -476,15 +489,15 @@ margin-bottom: 9px;
 
 .footer-social-list-icon {
     text-decoration: none;
-    width: 20px;
-    height: 20px;
+    /* width: 20px;
+    height: 20px; */
     fill: var(--footer-bigtext-color);
 }
-.footer-social-element{
+/* .footer-social-element{
     display: flex;
     flex-direction: column;
     align-items:baseline;
-}
+} */
 .footer-social-list-link {
     display: flex;
     align-items: center;
