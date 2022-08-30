@@ -335,8 +335,6 @@ width: calc( (100% - 150px) / 6);
     /* display: flex;
     flex-direction: column;
     align-self: center; */
-    margin-right: auto;
-    margin-left: auto;
 fill: var(--icons-color);
 }
 
